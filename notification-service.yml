@@ -1,3 +1,5 @@
+server:
+  port: 9091
 
 spring:
   application:
@@ -11,11 +13,9 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
-        spring.json.trusted.packages: com.user_service.user_service.event
-        spring.json.value.default.type: com.user_service.user_service.event.UserCreatedEvent
-
-server:
-  port: 9091
+        spring.json.trusted.packages: "com.user_service.user_service.event"
+        spring.json.value.default.type: "com.user_service.user_service.event.UserCreatedEvent"
+        spring.json.use.type.headers: false
 
 eureka:
   client:
@@ -26,4 +26,4 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,metrics,prometheus
+        include: health,info
