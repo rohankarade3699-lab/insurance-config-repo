@@ -15,7 +15,7 @@ spring:
         spring.json.value.default.type: com.user_service.user_service.event.UserCreatedEvent
 
 server:
-  port: 8087
+  port: 9091
 
 eureka:
   client:
