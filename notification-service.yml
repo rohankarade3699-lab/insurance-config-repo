@@ -5,6 +5,17 @@ spring:
   application:
     name: notification-service
 
+  datasource:
+    url: jdbc:postgresql://host.docker.internal:5432/notification_db
+    username: postgres
+    password: Postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false  
+
   kafka:
     bootstrap-servers: kafka:9092
     consumer:
